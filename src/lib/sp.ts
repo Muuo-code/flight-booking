@@ -28,4 +28,10 @@ export const SP = {
   getAirline: "CALL sp_getairline()",
   getAirlineDetail: "CALL sp_getairlinedetails(?)",
   deleteAirline: "CALL sp_deleteairline()",
+
+  //Flight Classes
+  saveFlightClasses: "CALL sp_saveflightclasses(?, ?, ?)",
+  getFlightClasses: "CALL sp_getflightclasses()",
+  getFlightClassDetails: "CALL sp_getflightclassdetails(?)",
+  deleteFlightClasses: "CALL sp_deleteflightclasses()",
 };

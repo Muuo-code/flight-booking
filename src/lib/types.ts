@@ -72,3 +72,16 @@ export interface SaveAirlineBody {
   airline_code: string;
   logo_url: string;
 }
+
+//Flight Classes
+export interface FlightClass {
+  class_id: number;
+  class_name: string;
+  description: string;
+}
+
+export interface SaveFlightClassBody {
+  class_id?: number;
+  class_name: string;
+  description: string;
+}

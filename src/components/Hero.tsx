@@ -1,14 +1,17 @@
 "use client";
 
-import React, { use } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import type { City } from "@/lib/types";
+import type { FlightClass } from "@/lib/types";
 import Image from "next/image";
 
 const Hero = () => {
   const [cities, setCities] = useState<City[]>([]);
+  const [flightclasses, setFlightClasses] = useState<FlightClass[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetching Cities
   useEffect(() => {
     async function fetchCities() {
       try {
@@ -24,9 +27,26 @@ const Hero = () => {
     }
     fetchCities();
   }, []);
+
+  // Fetching Flight Classes
+  useEffect(() => {
+    async function fetchFlightClasses() {
+      try {
+        const res = await fetch("api/flightclasses");
+        if (!res.ok) throw new Error("Failed to fetch flight classes");
+        const data: FlightClass[] = await res.json();
+        setFlightClasses(data);
+      } catch (err) {
+        return console.error("Error fetching flight classes", err);
+      }
+      setLoading(false);
+    }
+    fetchFlightClasses();
+  }, []);
+
   if (loading) return <p>Loading...</p>;
   return (
-    <div className="mt-2 py-8 bg-white shadow-md">
+    <div className="mt-6 py-8 bg-white shadow-md">
       <div className="relative w-full h-[700px]">
         <Image
           src="/images/sky2.jpg"
@@ -45,6 +65,15 @@ const Hero = () => {
             </p>
 
             <form className="mt-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg w-full max-w-7xl flex flex-col gap-4 text-gray-800">
+              <div className="flex justify-end">
+                <select className="bg-transparent pl-0 pr-6 py-1 text-blue-500 cursor-pointer focus:outline-none">
+                  {flightclasses.map((f) => (
+                    <option key={f.class_id} value={f.class_name}>
+                      {f.class_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
               {/* Row 1: inputs */}
               <div className="flex flex-wrap gap-4">
                 {/* From */}
