@@ -1,5 +1,39 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# ✈️ Flight Booking App
+
+A simple flight booking application built with modern frontend tools.  
+This project is a work in progress and will evolve as new features are added.
+
+---
+
+## 🚀 Features (current & planned)
+
+- Search for flights by origin and destination
+- Responsive layout for desktop and mobile
+- Dynamic city data integration (via API)
+- Clean, brand-consistent UI with Tailwind CSS
+- Modular components for scalability
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js / React
+- **Styling:** Tailwind CSS
+- **State Management:** React hooks (with potential for Context/Redux if needed)
+- **API Integration:** REST/GraphQL (to be defined)
+
+---
+
+## 📦 Getting Started
+
+Clone the repository:
+
+````bash
+git clone https://github.com/Muuo-code/flight-booking.git
+cd flight-booking
+
 ## Getting Started
 
 First, run the development server:
@@ -12,7 +46,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
