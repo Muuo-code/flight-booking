@@ -26,16 +26,16 @@ const Hero = () => {
   }, []);
   if (loading) return <p>Loading...</p>;
   return (
-    <div className="mt-2 py-8 bg-white shadow-md min-h-screen">
-      <div className="relative w-full h-[600px]">
+    <div className="mt-2 py-8 bg-white shadow-md">
+      <div className="relative w-full h-[700px]">
         <Image
-          src="/images/sky.jpg"
+          src="/images/sky2.jpg"
           alt="Sky Image"
           fill
           className="object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto px-2 md:px-0">
             <h1 className="text-5xl text-center font-bold drop-shadow-lg">
               Find Your Perfect Flight
             </h1>
@@ -44,7 +44,7 @@ const Hero = () => {
               worldwide. Your next adventure starts here.
             </p>
 
-            <form className="mt-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg w-full max-w-6xl flex flex-col gap-4 text-gray-800">
+            <form className="mt-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg w-full max-w-7xl flex flex-col gap-4 text-gray-800">
               {/* Row 1: inputs */}
               <div className="flex flex-wrap gap-4">
                 {/* From */}

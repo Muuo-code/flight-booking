@@ -1,5 +1,6 @@
 import CountryList from "@/components/Country";
 import Hero from "@/components/Hero";
+import More from "@/components/More";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Hero />
+      <More />
       <CountryList />
     </div>
   );
